@@ -1,7 +1,7 @@
 // creating components
 // there are 2 types of components
 // 1.functional components
-// 2.class components 
+// 2.class components
 
 // 1.functional components
 
@@ -13,8 +13,6 @@
 // }
 
 // export default App;
-
-
 
 // // 2.class components
 // import React from "react";
@@ -29,3 +27,18 @@
 // }
 // export default App;
 
+// 3.creating multiple component
+import React from "react";
+import Header from "./compo";
+class App1 extends React.Component {
+  render() {
+    return (
+      <>
+        <Header />
+        <Header />
+        <Header />
+      </>
+    );
+  }
+}
+export default App1;
