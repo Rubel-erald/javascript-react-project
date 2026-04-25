@@ -28,17 +28,29 @@
 // export default App;
 
 // 3.creating multiple component
-import React from "react";
-import Header from "./compo";
-class App1 extends React.Component {
-  render() {
-    return (
-      <>
-        <Header />
-        <Header />
-        <Header />
-      </>
-    );
-  }
+// import React from "react";
+// import Header from "./compo";
+// class App1 extends React.Component {
+//   render() {
+//     return (
+//       <>
+//         <Header />
+//         <Header />
+//         <Header />
+//       </>
+//     );
+//   }
+// }
+// export default App1;
+
+
+// creating variables inside components
+
+function Variables (){
+  let fname = "rubel";
+  let age = 23;
+  return <>
+  <h1>Hello {fname} your age is {age}</h1>
+  </>
 }
-export default App1;
+export default Variables;
