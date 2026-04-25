@@ -55,16 +55,30 @@
 // export default Variables;
 
 // passing variables parent components to child components
-import Header from "./compo";
-function Variables() {
-  let name = "rubel";
-  let age = 23;
-  let place = "coimbatore";
+// import Header from "./compo";
+// function Variables() {
+//   let name = "rubel";
+//   let age = 23;
+//   let place = "coimbatore";
 
-  return (
-    <>
-      <Header x={name} y={age} z={place} />
-    </>
-  );
-}
-export default Variables;
+//   return (
+//     <>
+//       <Header x={name} y={age} z={place} />
+//     </>
+//   );
+// }
+// export default Variables;
+
+// lets see in class components
+import Header from "./compo";
+import React from "react";
+
+class Variables extends React.Component {
+  render() {
+    return (
+      <>
+        <Header />
+      </>
+    );
+  }
+}export default Variables;
