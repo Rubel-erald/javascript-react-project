@@ -43,14 +43,28 @@
 // }
 // export default App1;
 
-
 // creating variables inside components
 
-function Variables (){
-  let fname = "rubel";
+// function Variables (){
+//   let fname = "rubel";
+//   let age = 23;
+//   return <>
+//   <h1>Hello {fname} your age is {age}</h1>
+//   </>
+// }
+// export default Variables;
+
+// passing variables parent components to child components
+import Header from "./compo";
+function Variables() {
+  let name = "rubel";
   let age = 23;
-  return <>
-  <h1>Hello {fname} your age is {age}</h1>
-  </>
+  let place = "coimbatore";
+
+  return (
+    <>
+      <Header x={name} y={age} z={place} />
+    </>
+  );
 }
 export default Variables;
