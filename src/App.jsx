@@ -75,10 +75,14 @@ import React from "react";
 
 class Variables extends React.Component {
   render() {
+    let name = "rubel";
+    let age = 23;
+    let place = "coimbatore";
     return (
       <>
-        <Header />
+        <Header a={name} b={age} c={place} />
       </>
     );
   }
-}export default Variables;
+}
+export default Variables;

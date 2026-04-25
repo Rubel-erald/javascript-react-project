@@ -23,11 +23,8 @@
 import React from "react";
 class Header extends React.Component {
   render() {
-    let name = "rubel";
-    let age = 23;
-    let place = "coimbatore";
     return <>
-    <h1>hello {name} you are {age} years old and you are from {place}</h1>
+    <h1>hello {this.props.a} you are {this.props.b} years old and you are from {this.props.c}</h1>
     </>;
   }
 }
