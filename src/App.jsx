@@ -3,6 +3,10 @@
 // 1.functional components
 // 2.class components
 
+import { useState } from "react";
+
+// const { useState } = require("react");
+
 // 1.functional components
 
 // function App (){
@@ -187,6 +191,34 @@
 //   return (
 //     <>
 //       <Header fn={fn} />
+//     </>
+//   );
+// }
+// export default App;
+
+// useState
+// function App(){
+//     const [likes,setlikes] = useState(0);
+
+//     const handleLike = () => {
+//         setlikes(likes + 1)
+//     }
+//     return (<>
+//     <h1>likes : {likes}</h1>
+//     <button onClick={}>click me</button>
+//     </>)
+// }
+
+// function App() {
+//   const [box, update] = useState(0);
+//   const machine = () => {
+//     update(100 + 1);
+//     console.log(box);
+//   };
+//   return (
+//     <>
+//       <h1>likes : {box}</h1>
+//       <button onClick={machine}>like the button</button>
 //     </>
 //   );
 // }
