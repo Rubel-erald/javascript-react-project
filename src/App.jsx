@@ -2,9 +2,6 @@
 // there are 2 types of components
 // 1.functional components
 // 2.class components
-
-import { useState } from "react";
-
 // const { useState } = require("react");
 
 // 1.functional components
@@ -223,3 +220,114 @@ import { useState } from "react";
 //   );
 // }
 // export default App;
+
+// import { useState } from "react";
+
+// function App() {
+//   const state = useState(0);
+
+//   const likes = state[0];
+//   const setLikes = state[1];
+
+//   return (
+//     <>
+//       <h1>{likes}</h1>
+
+//       <button onClick={() => setLikes(likes + 1)}>
+//         Like 👍
+//       </button>
+//     </>
+//   );
+// }
+
+// assignment
+// import { useState } from "react";
+// function App() {
+//   const [box, setlike] = useState(0);
+//    console.log(box);
+//   const like = () => {
+//     setlike(box + 1);
+//   };
+//   const disLike = () => {
+//     if (box >= 2) {
+//       setlike(box - 1);
+//     }
+
+//   };
+//   return (
+//     <>
+//       <h1>likes : {box}</h1>
+//       <button onClick={like}>Like</button>
+//       <button onClick={disLike}>Dislike</button>
+//     </>
+//   );
+// }
+// export default App;
+
+// multiple state example
+
+// import { useState } from "react";
+// function App() {
+//   const [likes, setLikes] = useState(0);
+//   const [dislike, setdislike] = useState(0);
+//   const updatelike = () => {
+//     setLikes(likes + 1);
+//   };
+//   const updatedislike = () => {
+//     setdislike(dislike + 1);
+//   };
+
+//   return (
+//     <>
+//       <h1>Likes : {likes}</h1>
+//       <h1>Dislike : {dislike}</h1>
+
+//       <button onClick={updatelike}>
+//         <span className="material-symbols-outlined">thumb_up</span>
+//       </button>
+
+//       <button onClick={updatedislike}>
+//         <span className="material-symbols-outlined">thumb_down</span>
+//       </button>
+//     </>
+//   );
+// }
+// export default App;
+
+// complex state
+// import { useState } from "react";
+// function App() {
+//   const [reaction, setupdates] = useState({
+//     likes: 0,
+//     dislike: 0,
+//   });
+
+//   const likeHandler = () => {
+//     setupdates({
+//       ...reaction,
+//       likes: reaction.likes + 1,
+//     });
+//   };
+
+//   const dislikeHandler = () => {
+//     setupdates({
+//       ...reaction,
+//       dislike: reaction.dislike + 1,
+//     });
+//   };
+
+//   return (
+//     <>
+//       <h1>Likes : {reaction.likes}</h1>
+//       <h1>Dislike : {reaction.dislike}</h1>
+//       <button onClick={likeHandler}>
+//         <span className="material-symbols-outlined">thumb_up</span>
+//       </button>
+//       <button onClick={dislikeHandler}>
+//         <span className="material-symbols-outlined">thumb_down</span>
+//       </button>
+//     </>
+//   );
+// }
+// export default App;
+
