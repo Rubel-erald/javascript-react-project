@@ -4,8 +4,6 @@
 // 2.class components
 // const { useState } = require("react");
 
-import { useFormState } from "react-dom";
-
 // 1.functional components
 
 // function App (){
@@ -459,19 +457,37 @@ import { useFormState } from "react-dom";
 // }
 // export default App;
 
-
-
 // list rendering
+// function App() {
+//   const menu = ["biriyani", "pongal", "poori", "chappathi"];
+//   const list = [];
+//   menu.forEach((a) => {
+//     list.push(<li>{a}</li>);
+//   });
+//   return (
+//     <>
+//       <h1>receipies</h1>
+//       <ul>{list}</ul>
+//     </>
+//   );
+// }
+// export default App;
+
+// useEffect
+import { useEffect } from "react";
 function App() {
-  const menu = ["biriyani", "pongal", "poori", "chappathi"];
-  const list = [];
-  menu.forEach((a) => {
-    list.push(<li>{a}</li>);
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((Response) => {
+        return Response.json();
+      })
+      .then((a) => {
+        console.log(a);
+      });
   });
   return (
     <>
       <h1>receipies</h1>
-      <ul>{list}</ul>
     </>
   );
 }
