@@ -4,6 +4,8 @@
 // 2.class components
 // const { useState } = require("react");
 
+import { useFormState } from "react-dom";
+
 // 1.functional components
 
 // function App (){
@@ -359,7 +361,7 @@
 
 //     const [box , setUpdates] = useState({
 //         like : 0,
-//         dislike : 0 
+//         dislike : 0
 //     })
 
 //     const likeHandler = () => {
@@ -385,3 +387,29 @@
 //   );
 // }
 // export default App;
+
+// forms
+function App() {
+  const handler = (e) => {
+    e.preventDefault();
+    console.log("form submitted");
+    console.log(e.target.rubel.value);  //target = form and rubel means that input name and value means inside the rubel has rubelerald@gmail.com
+    console.log(e.target.erald.value) //123
+  };
+  return (
+    <>
+      <h1>Log in form</h1>
+      <form onSubmit={handler}>
+        <div>
+          <input type="email" placeholder="email..." name="rubel" />
+        </div>
+
+        <div>
+          <input type="password" placeholder="password..." name="erald" />
+        </div>
+        <button>login</button>
+      </form>
+    </>
+  );
+}
+export default App;
