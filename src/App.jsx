@@ -388,7 +388,7 @@ import { useFormState } from "react-dom";
 // }
 // export default App;
 
-// forms
+// forms - uncontrolled forms we cannot usestate to forms 
 function App() {
   const handler = (e) => {
     e.preventDefault();
