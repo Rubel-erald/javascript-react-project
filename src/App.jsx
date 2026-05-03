@@ -331,3 +331,57 @@
 // }
 // export default App;
 
+// example rework
+// import { useState } from "react";
+// function App() {
+//   const [box, setBox] = useState(0);
+//   const update = () => {
+//     setBox(box + 1);
+//   };
+//   const dislikeUpdate = () => {
+//     if(box > 0){
+//         setBox(box - 1);
+//     }
+//   };
+
+//   return (
+//     <>
+//       <h1>Likes : {box} </h1>
+//       <button onClick={update}>like</button>
+//       <button onClick={dislikeUpdate}>dislike</button>
+//     </>
+//   );
+// }
+// export default App;
+
+// import { useState } from "react";
+// function App() {
+
+//     const [box , setUpdates] = useState({
+//         like : 0,
+//         dislike : 0 
+//     })
+
+//     const likeHandler = () => {
+//         setUpdates({
+//             ...box,
+//             like : box.like + 1
+//         })
+//     }
+
+//     const dislikeHandler = () => {
+//         setUpdates({
+//             ...box,
+//             dislike : box.dislike + 1
+//         })
+//     }
+//   return (
+//     <>
+//       <h1>likes : {box.like}</h1>
+//       <h1>dislike : {box.dislike}</h1>
+//       <button onClick={likeHandler}>like</button>
+//       <button onClick={dislikeHandler}>dislike</button>
+//     </>
+//   );
+// }
+// export default App;
