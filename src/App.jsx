@@ -458,3 +458,21 @@ import { useFormState } from "react-dom";
 //   );
 // }
 // export default App;
+
+
+
+// list rendering
+function App() {
+  const menu = ["biriyani", "pongal", "poori", "chappathi"];
+  const list = [];
+  menu.forEach((a) => {
+    list.push(<li>{a}</li>);
+  });
+  return (
+    <>
+      <h1>receipies</h1>
+      <ul>{list}</ul>
+    </>
+  );
+}
+export default App;
