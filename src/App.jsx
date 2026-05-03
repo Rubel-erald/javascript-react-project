@@ -388,28 +388,73 @@ import { useFormState } from "react-dom";
 // }
 // export default App;
 
-// forms - uncontrolled forms we cannot usestate to forms 
-function App() {
-  const handler = (e) => {
-    e.preventDefault();
-    console.log("form submitted");
-    console.log(e.target.rubel.value);  //target = form and rubel means that input name and value means inside the rubel has rubelerald@gmail.com
-    console.log(e.target.erald.value) //123
-  };
-  return (
-    <>
-      <h1>Log in form</h1>
-      <form onSubmit={handler}>
-        <div>
-          <input type="email" placeholder="email..." name="rubel" />
-        </div>
+// forms - uncontrolled forms we cannot usestate to forms
+// function App() {
+//   const handler = (e) => {
+//     e.preventDefault();
+//     console.log("form submitted");
+//     console.log(e.target.rubel.value);  //target = form and rubel means that input name and value means inside the rubel has rubelerald@gmail.com
+//     console.log(e.target.erald.value) //123
+//   };
+//   return (
+//     <>
+//       <h1>Log in form</h1>
+//       <form onSubmit={handler}>
+//         <div>
+//           <input type="email" placeholder="email..." name="rubel" />
+//         </div>
 
-        <div>
-          <input type="password" placeholder="password..." name="erald" />
-        </div>
-        <button>login</button>
-      </form>
-    </>
-  );
-}
-export default App;
+//         <div>
+//           <input type="password" placeholder="password..." name="erald" />
+//         </div>
+//         <button>login</button>
+//       </form>
+//     </>
+//   );
+// }
+// export default App;
+
+// controlled forms using usestate
+// import { useState } from "react";
+// function App() {
+//   const [googlemail, setEmail] = useState("");
+//   const [password, setpassword] = useState("");
+//   const handler = (e) => {
+//     e.preventDefault();
+//     console.log("form submitted");
+//     console.log(googlemail);
+//     console.log(password);
+//   };
+//   return (
+//     <>
+//       <h1>Log in form</h1>
+//       <form onSubmit={handler}>
+//         <div>
+//           <input
+//             type="email"
+//             placeholder="email..."
+//             name="rubel"
+//             value={googlemail}
+//             onChange={(event) => {
+//               setEmail(event.target.value);
+//             }}
+//           />
+//         </div>
+
+//         <div>
+//           <input
+//             type="password"
+//             placeholder="password..."
+//             name="erald"
+//             value={password}
+//             onChange={(event) => {
+//               setpassword(event.target.value);
+//             }}
+//           />
+//         </div>
+//         <button>login</button>
+//       </form>
+//     </>
+//   );
+// }
+// export default App;
