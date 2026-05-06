@@ -474,21 +474,72 @@
 // export default App;
 
 // useEffect
-import { useEffect } from "react";
+// import { useEffect } from "react";
+// function App() {
+//   useEffect(() => {
+//     fetch("https://jsonplaceholder.typicode.com/users")
+//       .then((Response) => {
+//         return Response.json();
+//       })
+//       .then((a) => {
+//         console.log(a);
+//       });
+//   });
+//   return (
+//     <>
+//       <h1>receipies</h1>
+//     </>
+//   );
+// }
+// export default App;
+
+// Alternative for fetch is (axios)
+// import axios from "axios";
+// function App() {
+//   axios.get("https://jsonplaceholder.typicode.com/users").then((data) => {
+//     console.log(data.data);
+//   });
+// }
+// export default App;
+
+// useReducer
+// use state and action 
+// state will update the box
+// action will pass and receive arguments
+import { useReducer } from "react";
 function App() {
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((Response) => {
-        return Response.json();
-      })
-      .then((a) => {
-        console.log(a);
-      });
-  });
+  const machine = (state, action) => {
+    if (action == "like" ) {
+      return state + 1;
+    } else {
+      return state > 0 ? state - 1 : 0;
+    }
+  };
+  const [box, setUpdates] = useReducer(machine, 0);
   return (
     <>
-      <h1>receipies</h1>
+      <h1>likes : {box}</h1>
+      <button
+        onClick={() => {
+          setUpdates("like");
+        }}
+      >
+        like me
+      </button>
+      <button
+        onClick={() => {
+          setUpdates("dislike");
+        }}
+      >
+        dislike me
+      </button>
     </>
   );
 }
 export default App;
+
+// state > 0 ? state - 1 : 0;
+// state > 0 condition 
+// state - 1 if true this works or else it will return 0
+
+
