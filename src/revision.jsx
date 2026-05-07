@@ -1,5 +1,5 @@
-import React from "react";
-import Header from "./revison-component";
+// import React, { useState } from "react";
+// import Header from "./revison-component";
 // This is a Alternative page of all react lessons
 // Creating a component
 // there are 2 different ways to create components
@@ -143,6 +143,63 @@ import Header from "./revison-component";
 // }
 // export default App;
 
-// Now lets see about hooks 
+// Now lets see about hooks
 // useState
+import { useState } from "react";
+// function App() {
+//   const [likebox, setUpdate] = useState(0);
+//   const updateMachine = () => {
+//     setUpdate(likebox + 1);
+//   };
+//   const decreseMachine = () => {
+//     if (likebox > 0) {
+//       setUpdate(likebox - 1);
+//     }
+//   };
+//   return (
+//     <>
+//       <h1>likes : {likebox}</h1>
+//       <button onClick={updateMachine}>add like</button>
+//       <button onClick={decreseMachine}>decrese like</button>
+//     </>
+//   );
+// }
+// export default App;
 
+// complex state
+// function App() {
+//   const [updateBox, setUpdate] = useState({
+//     like: 0,
+//     dislike: 0,
+//   });
+//   const likeHandler = () => {
+//     setUpdate({
+//       ...updateBox,
+//       like: updateBox.like + 1,
+//     });
+//   };
+//   const dislikeHandler = () => {
+//     setUpdate({
+//       ...updateBox,
+//       dislike: updateBox.dislike + 1,
+//     });
+//   };
+
+//   const resetfn = () => {
+//     setUpdate({
+//       ...updateBox,
+//       like: 0,
+//       dislike: 0,
+//     });
+//   };
+//   return (
+//     <>
+//       <h1>likes : {updateBox.like}</h1>
+//       <h1>dislike : {updateBox.dislike}</h1>
+//       <button onClick={likeHandler}>like</button>
+//       <button onClick={dislikeHandler}>dislike</button>
+//       <button onClick={resetfn}>reset</button>
+//     </>
+//   );
+// }
+// export default App;
