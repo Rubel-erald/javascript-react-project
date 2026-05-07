@@ -1,3 +1,5 @@
+import React from "react";
+import Header from "./revison-component";
 // This is a Alternative page of all react lessons
 // Creating a component
 // there are 2 different ways to create components
@@ -31,8 +33,6 @@
 // Now lets see about creating multiple component from another file
 // class component
 // ex = 01
-// import React from "react";
-// import Header from "./revison-component";
 // class App extends React.Component {
 //   render() {
 //     return (
@@ -61,15 +61,88 @@
 
 // Now lets create a varibels inside those component
 // class component
+// class App extends React.Component {
+//   render() {
+//     let name = "class component";
+//     return (
+//       <>
+//         <h1>hello {name}</h1>
+//       </>
+//     );
+//   }
+// }
+// export default App;
+
+// function component - creating variables
+// function App() {
+//   let name = "functional component";
+//   return (
+//     <>
+//       <h1>hello {name}</h1>
+//     </>
+//   );
+// }
+// export default App;
+
+// Now lets see about how to pass varibale from parent to child component
+// parent component - class component
 // ex = 03
-class App extends React.Component {
-  render() {
-    let name = "class component";
-    return (
-      <>
-        <h1>hello {name}</h1>
-      </>
-    );
-  }
-}
-export default App;
+// class App extends React.Component {
+//   render() {
+//     let name = "class component";
+
+//     return (
+//       <>
+//         <Header variableName={name} />
+//       </>
+//     );
+//   }
+// }
+// export default App;
+
+// parent component - functional component
+// ex = 04
+// function App() {
+//   let name = "functional component";
+//   return (
+//     <>
+//       <Header variableNAme={name} />
+//     </>
+//   );
+// }
+// export default App;
+
+// Now lets see about passing variables child to parent
+// class component - parent component
+// ex = 05
+// class App extends React.Component {
+//   render() {
+//     const fn = (msg) => {
+//       console.log(msg);
+//     };
+//     return (
+//       <>
+//         <Header fnName={fn} />
+//       </>
+//     );
+//   }
+// }
+// export default App;
+
+// functional component - parent component
+// ex = 06
+// function App() {
+//   const fn = (msg) => {
+//     console.log(msg)
+//   }
+//   return (
+//     <>
+//       <Header fnName = {fn}/>
+//     </>
+//   );
+// }
+// export default App;
+
+// Now lets see about hooks 
+// useState
+
