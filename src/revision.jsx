@@ -271,17 +271,40 @@
 
 // Now lets see about list rendering
 // each list should have unique key (set key = {index} inside list)
-function App() {
-  const menu = ["mango", "banana", "grapes", "orange"];
-  const listbox = [];
-  menu.map((index) => {
-    listbox.push(<li key={index}>{index}</li>);
-  });
-  return (
-    <>
-      <h1>Receipes</h1>
-      <ul>{listbox}</ul>
-    </>
-  );
-}
-export default App;
+// function App() {
+//   const menu = ["mango", "banana", "grapes", "orange"];
+//   const listbox = [];
+//   menu.map((index) => {
+//     listbox.push(<li key={index}>{index}</li>);
+//   });
+//   return (
+//     <>
+//       <h1>Receipes</h1>
+//       <ul>{listbox}</ul>
+//     </>
+//   );
+// }
+// export default App;
+
+// Now lets see about useEffect
+// If the components re-render the useEffect function will run based on dependiencies
+// [] - runs only once 
+// [box] - whenever the box changes the useEffect runs
+// import { useEffect, useState } from "react";
+// function App() {
+//   const [box, setBox] = useState(0);
+//   const handler = () => {
+//     setBox(box + 1);
+//   };
+
+//   useEffect(() => {
+//     console.log("box updated");
+//   }, []);
+//   return (
+//     <>
+//       <h1>api call</h1>
+//       <button onClick={handler}>click me</button>
+//     </>
+//   );
+// }
+// export default App;
