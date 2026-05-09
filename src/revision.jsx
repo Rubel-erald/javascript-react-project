@@ -203,3 +203,29 @@ import { useState } from "react";
 //   );
 // }
 // export default App;
+
+// Now lets see about controlled and uncontrolled forms
+// uncontrolled form - we cannot use (useState) to control the form data
+// for example
+// function App() {
+//   const handler = (event) => {
+//     event.preventDefault();
+//     console.log(event.target.email.value);
+//     console.log(event.target.password.value);
+//   };
+//   return (
+//     <>
+//       <h1>LogIn forms</h1>
+//       <form onSubmit={handler}>
+//         <input type="email" placeholder="type your email" name="email" />
+//         <input
+//           type="password"
+//           placeholder="enter your password"
+//           name="password"
+//         />
+//         <button>Submit</button>
+//       </form>
+//     </>
+//   );
+// }
+// export default App;
