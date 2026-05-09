@@ -145,7 +145,7 @@
 
 // Now lets see about hooks
 // useState
-import { useState } from "react";
+// import { useState } from "react";
 // function App() {
 //   const [likebox, setUpdate] = useState(0);
 //   const updateMachine = () => {
@@ -229,3 +229,42 @@ import { useState } from "react";
 //   );
 // }
 // export default App;
+
+// Now lets see about controlled forms using useState
+import { useState } from "react";
+function App() {
+  const [emailbox, setemail] = useState("");
+  const [passwordbox, setpassword] = useState("");
+  const handler = (event) => {
+    event.preventDefault();
+    console.log(emailbox);
+    console.log(passwordbox);
+  };
+  return (
+    <>
+      <h1>LogIn forms</h1>
+      <form onSubmit={handler}>
+        <input
+          type="email"
+          placeholder="enter your email"
+          name="email"
+          value={emailbox}
+          onChange={(event) => {
+            setemail(event.target.value);
+          }}
+        />
+        <input
+          type="password"
+          placeholder="enter your password"
+          name="password"
+          value={passwordbox}
+          onChange={(event) => {
+            setpassword(event.target.value);
+          }}
+        />
+        <button>Submit</button>
+      </form>
+    </>
+  );
+}
+export default App;
