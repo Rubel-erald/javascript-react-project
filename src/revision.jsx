@@ -231,39 +231,56 @@
 // export default App;
 
 // Now lets see about controlled forms using useState
-import { useState } from "react";
+// import { useState } from "react";
+// function App() {
+//   const [emailbox, setemail] = useState("");
+//   const [passwordbox, setpassword] = useState("");
+//   const handler = (event) => {
+//     event.preventDefault();
+//     console.log(emailbox);
+//     console.log(passwordbox);
+//   };
+//   return (
+//     <>
+//       <h1>LogIn forms</h1>
+//       <form onSubmit={handler} id="form">
+//         <input
+//           type="email"
+//           placeholder="enter your email"
+//           name="email"
+//           value={emailbox}
+//           onChange={(event) => {
+//             setemail(event.target.value);
+//           }}
+//         />
+//         <input
+//           type="password"
+//           placeholder="enter your password"
+//           name="password"
+//           value={passwordbox}
+//           onChange={(event) => {
+//             setpassword(event.target.value);
+//           }}
+//         />
+
+//       </form><button form="form">Submit</button>
+//     </>
+//   );
+// }
+// export default App;
+
+// Now lets see about list rendering
+// each list should have unique key (set key = {index} inside list)
 function App() {
-  const [emailbox, setemail] = useState("");
-  const [passwordbox, setpassword] = useState("");
-  const handler = (event) => {
-    event.preventDefault();
-    console.log(emailbox);
-    console.log(passwordbox);
-  };
+  const menu = ["mango", "banana", "grapes", "orange"];
+  const listbox = [];
+  menu.map((index) => {
+    listbox.push(<li key={index}>{index}</li>);
+  });
   return (
     <>
-      <h1>LogIn forms</h1>
-      <form onSubmit={handler}>
-        <input
-          type="email"
-          placeholder="enter your email"
-          name="email"
-          value={emailbox}
-          onChange={(event) => {
-            setemail(event.target.value);
-          }}
-        />
-        <input
-          type="password"
-          placeholder="enter your password"
-          name="password"
-          value={passwordbox}
-          onChange={(event) => {
-            setpassword(event.target.value);
-          }}
-        />
-        <button>Submit</button>
-      </form>
+      <h1>Receipes</h1>
+      <ul>{listbox}</ul>
     </>
   );
 }
