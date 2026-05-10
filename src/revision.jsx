@@ -288,7 +288,7 @@
 
 // Now lets see about useEffect
 // If the components re-render the useEffect function will run based on dependiencies
-// [] - runs only once 
+// [] - runs only once
 // [box] - whenever the box changes the useEffect runs
 // import { useEffect, useState } from "react";
 // function App() {
@@ -308,3 +308,43 @@
 //   );
 // }
 // export default App;
+
+// Now lets see about useReducer
+// same as useState but useReducer for complex state
+// import { useReducer } from "react";
+// function App() {
+//   const machine = (state, action) => {
+//     switch (action) {
+//       case "like":
+//         return state + 1;
+//         break;
+//       case "dislike":
+//         return state > 0 ? state - 1 : 0;
+//       default:
+//         return state;
+//     }
+//   };
+//   const [likebox, setbox] = useReducer(machine, 0);
+
+//   return (
+//     <>
+//       <h1>Likes : {likebox}</h1>
+//       <button
+//         onClick={() => {
+//           setbox("like");
+//         }}
+//       >
+//         Like me
+//       </button>
+//       <button
+//         onClick={() => {
+//           setbox("dislike");
+//         }}
+//       >
+//         Dislike me
+//       </button>
+//     </>
+//   );
+// }
+// export default App;
+
