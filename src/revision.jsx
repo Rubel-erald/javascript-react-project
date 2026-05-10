@@ -348,3 +348,109 @@
 // }
 // export default App;
 
+// Now lets see about useRef
+// useRef its like a variable
+// let see the differents between normal variable and state variables
+// and we see the differents between them
+
+// normal variable
+// function App() {
+//   let likes = 0;
+//   const handler = () => {
+//     likes = likes + 1;
+//     console.log(likes);
+//   };
+//   return (
+//     <>
+//       <h1>Likes : {likes}</h1>
+//       <button
+//         onClick={handler}
+//       >
+//         Inc
+//       </button>
+//     </>
+//   );
+// }
+// export default App;
+
+// actually likes are incresing but its not updating the component
+// if component re-render the normal variable gets reset to 0
+// lets see
+
+// function App() {
+//   let like = 0;
+//   const [likebox, setLike] = useState(true);
+//   const handler = () => {
+//     like = like + 1;
+//     console.log(like)
+//   };
+//   console.log(likebox)
+//   return (
+//     <>
+//       <h1>likes : {like}</h1>
+//       <button onClick={handler}>inc</button>
+//       <button
+//         onClick={() => {
+//           setLike(!likebox);
+//         }}
+//       >
+//         re-render
+//       </button>
+//     </>
+//   );
+// }
+// export default App;
+
+// But it is a state value its not reset
+// the componet re - render the state value will continues where its left
+// function App() {
+//   const [likebox, setLike] = useState(0);
+//   const [box, setBox] = useState(true);
+//   useEffect(() => {
+//     console.log(likebox);
+//     console.log(`current state is ${box}`);
+//   }, [box]);
+
+//   return (
+//     <>
+//       <h1>Likes : {likebox}</h1>
+//       <button onClick={() => {setLike(likebox + 1)}}>Inc</button>
+//       <button onClick={() => {setBox(!box)}}>Re - render</button>
+//     </>
+//   );
+// }
+// export default App;
+
+// now what the use of useRef variable
+// in normal variable if components get re-render the normal variable gets reset to 0
+// but in useRef variable if the component gets re-render the value will continues
+// component re-render the updated value will show
+// lets see an example
+// import { useEffect, useRef, useState } from "react";
+
+// function App() {
+//   let count = useRef(0); //inorder to access the count use .current
+//   const [initial, setInitial] = useState(true);
+//   const handler = () => {
+//     count.current = count.current + 1;
+//     console.log(count.current);
+//   };
+//   return (
+//     <>
+//       <h1>Likes : {count.current}</h1>
+//       <button
+//         onClick={handler}
+//       >
+//         Inc
+//       </button>
+//       <button
+//         onClick={() => {
+//           setInitial(!initial);
+//         }}
+//       >
+//         Re-render
+//       </button>
+//     </>
+//   );
+// }
+// export default App;
