@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 // ex = 01
 // import React from "react";
 // class Header extends React.Component{
@@ -73,3 +73,21 @@ import React from "react";
 //   );
 // }
 // export default Header;
+
+// ex = 07 react-router components
+// function HomePage() {
+//   return (
+//     <>
+//       <h1>Hello i am from home page</h1>
+//     </>
+//   );
+// }
+
+// function Querycenter() {
+//   return (
+//     <>
+//       <h1>hello i am from Querycenter</h1>
+//     </>
+//   );
+// }
+// export { HomePage, Querycenter };
