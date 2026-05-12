@@ -454,6 +454,32 @@
 //   );
 // }
 // export default App;
-// We can map to input to useRef ref{variable name} 
+// We can map to input to useRef ref{variable name}
 
+// Now lets see about React router
+// Installation
+// React router .com - latest version 7
+// npm install  react-router@latest
 
+//  And create a router
+import { createBrowserRouter, RouterProvider } from "react-router";
+const router1 = createBrowserRouter([
+  // each route as an object
+  {
+    path: "/", // this represents localhost : 5173/
+    element: <h1>hello world !</h1>,
+  },
+  {
+    path: "code-kata",
+    element: <h1>this is code-kata page</h1>,
+  },
+  {
+    path: "sql-kata",
+    element: <h1>this is sql-kata page</h1>,
+  },
+]);
+
+function App() {
+  return <RouterProvider router={router1} />;
+}
+export default App;
