@@ -454,3 +454,6 @@
 //   );
 // }
 // export default App;
+// We can map to input to useRef ref{variable name} 
+
+
