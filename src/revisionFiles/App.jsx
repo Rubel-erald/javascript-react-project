@@ -506,37 +506,37 @@
 // use state and action 
 // state will update the box
 // action will pass and receive arguments
-import { useReducer } from "react";
-function App() {
-  const machine = (state, action) => {
-    if (action == "like" ) {
-      return state + 1;
-    } else {
-      return state > 0 ? state - 1 : 0;
-    }
-  };
-  const [box, setUpdates] = useReducer(machine, 0);
-  return (
-    <>
-      <h1>likes : {box}</h1>
-      <button
-        onClick={() => {
-          setUpdates("like");
-        }}
-      >
-        like me
-      </button>
-      <button
-        onClick={() => {
-          setUpdates("dislike");
-        }}
-      >
-        dislike me
-      </button>
-    </>
-  );
-}
-export default App;
+// import { useReducer } from "react";
+// function App() {
+//   const machine = (state, action) => {
+//     if (action == "like" ) {
+//       return state + 1;
+//     } else {
+//       return state > 0 ? state - 1 : 0;
+//     }
+//   };
+//   const [box, setUpdates] = useReducer(machine, 0);
+//   return (
+//     <>
+//       <h1>likes : {box}</h1>
+//       <button
+//         onClick={() => {
+//           setUpdates("like");
+//         }}
+//       >
+//         like me
+//       </button>
+//       <button
+//         onClick={() => {
+//           setUpdates("dislike");
+//         }}
+//       >
+//         dislike me
+//       </button>
+//     </>
+//   );
+// }
+// export default App;
 
 // state > 0 ? state - 1 : 0;
 // state > 0 condition 

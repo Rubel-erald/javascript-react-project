@@ -503,3 +503,31 @@
 //   return <RouterProvider router={router} />;
 // }
 // export default App;
+
+// Now lets see about nested routes
+import { createBrowserRouter, RouterProvider } from "react-router";
+import Wrapper from "./wrapper/wrapper";
+import Homepage from "./pages/homePage";
+import { LoginPage } from "./pages/loginPage";
+import { RegisterPage } from "./pages/registerPage";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: < Wrapper />,
+    children : [{
+      path : "",
+      element : < Homepage />
+    },{
+      path : "loginPage",
+      element : <LoginPage />
+    },{
+      path : "registerPage",
+      element : <RegisterPage />
+    }]
+  },
+]);
+
+function App() {
+  return <RouterProvider router={router} />;
+}
+export default App;
