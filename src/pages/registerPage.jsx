@@ -1,3 +1,10 @@
-export const RegisterPage = () => {
-  return <h1>Register page</h1>;
-};
+// import { useLoaderData } from "react-router";
+// export const RegisterPage = () => {
+//   const rubel = useLoaderData()
+//   return (<>
+//   <h1>products</h1>
+//   <ul>
+//     {rubel.map(() => )}
+//   </ul>
+//   </>);
+// };

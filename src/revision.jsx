@@ -513,17 +513,21 @@
 // const router = createBrowserRouter([
 //   {
 //     path: "/",
-//     element: < Wrapper />,
-//     children : [{
-//       path : "",
-//       element : < Homepage />
-//     },{
-//       path : "loginPage",
-//       element : <LoginPage />
-//     },{
-//       path : "registerPage",ī
-//       element : <RegisterPage />
-//     }]
+//     element: <Wrapper />,
+//     children: [
+//       {
+//         path: "",
+//         element: <Homepage />,
+//       },
+//       {
+//         path: "loginPage",
+//         element: <LoginPage />,
+//       },
+//       {
+//         path: "registerPage",
+//         element: <RegisterPage />
+//       },
+//     ],
 //   },
 // ]);
 
@@ -534,27 +538,50 @@
 
 // simple API call and redering in the ui
 // ex = 08
-import { useState } from "react";
-import { useEffect } from "react";
-import Data from "./revisionFiles/revison-component";
+// import { useState } from "react";
+// import { useEffect } from "react";
+// import Data from "./revisionFiles/revison-component";
+
+// function App() {
+//   const [box, setbox] = useState([]);
+//   useEffect(() => {
+//     fetch("https://fakestoreapi.com/products?limit=5")
+//       .then((res) => res.json())
+//       .then((data) => setbox(data))
+//       .catch((err) => console.log(err));
+//   }, []);
+//   return (
+//     <>
+//       <h1>Products</h1>
+//       <ul>
+//         {box.map((s) => (
+//           <Data  s = {s} key={s.title}/>
+//         ))}
+//       </ul>
+//     </>
+//   );
+// }
+// export default App;
+
+// Now lets see about useLoaderdata
+import { createBrowserRouter, RouterProvider } from "react-router";
+import Homepage from "./pages/homePage";
+import Loaders from "./loaders/loaders";
+import Loginpage from "./pages/loginPage"
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Homepage />,
+  },
+  {
+    path: "/login",
+    element: <Loginpage />,
+    loader: Loaders,
+    hydrateFallbackElement : <h1>loading element ...</h1>
+  },
+]);
 
 function App() {
-  const [box, setbox] = useState([]);
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products?limit=5")
-      .then((res) => res.json())
-      .then((data) => setbox(data))
-      .catch((err) => console.log(err));
-  }, []);
-  return (
-    <>
-      <h1>Products</h1>
-      <ul>
-        {box.map((s) => (
-          <Data  s = {s} key={s.title}/>
-        ))}
-      </ul>
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 export default App;
