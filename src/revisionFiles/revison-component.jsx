@@ -91,3 +91,9 @@
 //   );
 // }
 // export { HomePage, Querycenter };
+
+// ex = 08 - api call
+function Data(props) {
+  return <li> {props.s.price}</li>;
+}
+export default Data;

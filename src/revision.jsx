@@ -533,8 +533,10 @@
 // export default App;
 
 // simple API call and redering in the ui
+// ex = 08
 import { useState } from "react";
 import { useEffect } from "react";
+import Data from "./revisionFiles/revison-component";
 
 function App() {
   const [box, setbox] = useState([]);
@@ -548,7 +550,9 @@ function App() {
     <>
       <h1>Products</h1>
       <ul>
-        {box .map((s) => {return <li key={s.title}> {s.title}</li>})}
+        {box.map((s) => (
+          <Data  s = {s} key={s.title}/>
+        ))}
       </ul>
     </>
   );
