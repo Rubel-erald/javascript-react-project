@@ -505,29 +505,52 @@
 // export default App;
 
 // Now lets see about nested routes
-import { createBrowserRouter, RouterProvider } from "react-router";
-import Wrapper from "./wrapper/wrapper";
-import Homepage from "./pages/homePage";
-import { LoginPage } from "./pages/loginPage";
-import { RegisterPage } from "./pages/registerPage";
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: < Wrapper />,
-    children : [{
-      path : "",
-      element : < Homepage />
-    },{
-      path : "loginPage",
-      element : <LoginPage />
-    },{
-      path : "registerPage",
-      element : <RegisterPage />
-    }]
-  },
-]);
+// import { createBrowserRouter, RouterProvider } from "react-router";
+// import Wrapper from "./wrapper/wrapper";
+// import Homepage from "./pages/homePage";
+// import { LoginPage } from "./pages/loginPage";
+// import { RegisterPage } from "./pages/registerPage";
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: < Wrapper />,
+//     children : [{
+//       path : "",
+//       element : < Homepage />
+//     },{
+//       path : "loginPage",
+//       element : <LoginPage />
+//     },{
+//       path : "registerPage",ī
+//       element : <RegisterPage />
+//     }]
+//   },
+// ]);
+
+// function App() {
+//   return <RouterProvider router={router} />;
+// }
+// export default App;
+
+// simple API call and redering in the ui
+import { useState } from "react";
+import { useEffect } from "react";
 
 function App() {
-  return <RouterProvider router={router} />;
+  const [box, setbox] = useState([]);
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products?limit=5")
+      .then((res) => res.json())
+      .then((data) => setbox(data))
+      .catch((err) => console.log(err));
+  }, []);
+  return (
+    <>
+      <h1>Products</h1>
+      <ul>
+        {box .map((s) => {return <li key={s.title}> {s.title}</li>})}
+      </ul>
+    </>
+  );
 }
 export default App;
