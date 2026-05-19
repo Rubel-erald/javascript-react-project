@@ -567,7 +567,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 import Homepage from "./pages/homePage";
 import Loaders from "./loaders/loaders";
-import Loginpage from "./pages/loginPage"
+import Loginpage from "./pages/loginPage";
+import { Template } from "./pages/template";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -577,7 +578,11 @@ const router = createBrowserRouter([
     path: "/login",
     element: <Loginpage />,
     loader: Loaders,
-    hydrateFallbackElement : <h1>loading element ...</h1>
+    hydrateFallbackElement: <h1>loading element ...</h1>,
+  },
+  {
+    path: "/login/:num",
+    element: <Template />,
   },
 ]);
 
