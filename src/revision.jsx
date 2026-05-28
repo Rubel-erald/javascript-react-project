@@ -568,7 +568,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import Homepage from "./pages/homePage";
 import Loaders from "./loaders/loaders";
 import Loginpage from "./pages/loginPage";
-import { Template } from "./pages/template";
+import Template from "./pages/template";
 import Loaders2 from "./loaders/loaders2";
 const router = createBrowserRouter([
   {

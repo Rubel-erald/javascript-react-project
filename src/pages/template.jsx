@@ -1,9 +1,13 @@
 import { useLoaderData } from "react-router";
-export const Template = () => {
+function Template() {
+  const thatdata = useLoaderData();
 
-  const load = useLoaderData()
-  return (<>
-  <h1>Template page</h1>
-  <h1>Products {load.title}</h1>
-  </>);
-};
+  return (
+    <>
+      <h1>hello</h1>
+      <p>{thatdata.title}</p>
+      <p>{thatdata.price}</p>
+    </>
+  );
+}
+export default Template;
