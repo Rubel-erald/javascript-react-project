@@ -5,7 +5,7 @@ function LoginPage() {
   return (<>
   <h1>Products</h1>
   <ul>
-    {rubel.map((erald) => <li key={erald.title}><Link to={`/login/${erald.id}`}>{erald.title}</Link></li>)}
+    {rubel.map((erald) => <li key={erald.title}><Link to={`/template?id=${erald.id}`}>{erald.title}</Link></li>)}
   </ul>
   </>)
 }

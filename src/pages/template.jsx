@@ -1,12 +1,11 @@
 import { useLoaderData } from "react-router";
 function Template() {
-  const thatdata = useLoaderData();
-
+  const thatData = useLoaderData()
   return (
     <>
       <h1>hello</h1>
-      <p>{thatdata.title}</p>
-      <p>{thatdata.price}</p>
+      <p>{thatData.title}</p>
+      <p>{thatData.price}</p>
     </>
   );
 }

@@ -582,7 +582,7 @@ const router = createBrowserRouter([
     hydrateFallbackElement: <h1>loading element ...</h1>,
   },
   {
-    path: "/login/:num",
+    path: "/template",
     element: <Template />,
     loader: Loaders2,
     hydrateFallbackElement: <h1>loading element</h1>,
