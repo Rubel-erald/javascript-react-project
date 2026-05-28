@@ -564,32 +564,46 @@
 // export default App;
 
 // Now lets see about useLoaderdata
-import { createBrowserRouter, RouterProvider } from "react-router";
-import Homepage from "./pages/homePage";
-import Loaders from "./loaders/loaders";
-import Loginpage from "./pages/loginPage";
-import Template from "./pages/template";
-import Loaders2 from "./loaders/loaders2";
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Homepage />,
-  },
-  {
-    path: "/login",
-    element: <Loginpage />,
-    loader: Loaders,
-    hydrateFallbackElement: <h1>loading element ...</h1>,
-  },
-  {
-    path: "/template",
-    element: <Template />,
-    loader: Loaders2,
-    hydrateFallbackElement: <h1>loading element</h1>,
-  },
-]);
+// import { createBrowserRouter, RouterProvider } from "react-router";
+// import Homepage from "./pages/homePage";
+// import Loaders from "./loaders/loaders";
+// import Loginpage from "./pages/loginPage";
+// import Template from "./pages/template";
+// import Loaders2 from "./loaders/loaders2";
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <Homepage />,
+//   },
+//   {
+//     path: "/login",
+//     element: <Loginpage />,
+//     loader: Loaders,
+//     hydrateFallbackElement: <h1>loading element ...</h1>,
+//   },
+//   {
+//     path: "/template",
+//     element: <Template />,
+//     loader: Loaders2,
+//     hydrateFallbackElement: <h1>loading element</h1>,
+//   },
+// ]);
 
+// function App() {
+//   return <RouterProvider router={router} />;
+// }
+// export default App;
+
+// useContext
+import { createContext } from "react";
+import Page1 from "./samplePages/page1";
+ export const Data = createContext();
 function App() {
-  return <RouterProvider router={router} />;
+  const name = "rubel";
+  return (
+    <Data.Provider value={name}>
+      <Page1 />
+    </Data.Provider>
+  );
 }
 export default App;
