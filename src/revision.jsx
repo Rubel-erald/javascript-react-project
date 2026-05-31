@@ -594,16 +594,32 @@
 // }
 // export default App;
 
-// useContext
-import { createContext } from "react";
-import Page1 from "./samplePages/page1";
- export const Data = createContext();
+// dnd-kit
+// App.jsx
+import { DragDropProvider } from "@dnd-kit/react";
+import { useState } from "react";
+import SourtableItems from "./components/DragItems";
 function App() {
-  const name = "rubel";
+  const [fruits, setFruits] = useState([
+    { id: 1, name: "apple" },
+    { id: 2, name: "mango" },
+    { id: 3, name: "orange" },
+    {id : 4 , name : "grapes"}
+  ]);
+
   return (
-    <Data.Provider value={name}>
-      <Page1 />
-    </Data.Provider>
+    <div>
+      <h1>Fruits</h1>
+      <DragDropProvider>
+        <ol>
+          {fruits.map((items , index) => (
+            <SourtableItems key={items.id} id={items.id} index={index}>
+              {items.name}
+            </SourtableItems>
+          ))}
+        </ol>
+      </DragDropProvider>
+    </div>
   );
 }
 export default App;
