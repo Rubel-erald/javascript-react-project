@@ -1,4 +1,9 @@
 import { createRoot } from "react-dom/client";
-import App from "./revision";
-
-createRoot(document.getElementById("root")).render(<App />);
+import App from "./App";
+import { Provider } from "react-redux";
+import mainStore from "./redux/store";
+createRoot(document.getElementById("root")).render(
+  <Provider store={mainStore}>
+    <App />
+  </Provider>,
+);
