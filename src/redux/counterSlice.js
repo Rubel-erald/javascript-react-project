@@ -5,6 +5,7 @@ const counterSlice = createSlice({
   initialState: {
     likes: 0,
     dislike: 0,
+    notes : []
   },
   reducers: {
     setlike: (state) => {
@@ -13,7 +14,10 @@ const counterSlice = createSlice({
     setdislike: (state) => {
       state.dislike += 1;
     },
+    setNotes : (state , action) => {
+      state.notes = action.payload
+    }
   },
 });
-export const { setdislike, setlike } = counterSlice.actions;
+export const { setdislike, setlike , setNotes} = counterSlice.actions;
 export default counterSlice.reducer;
